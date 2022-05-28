@@ -46,20 +46,7 @@ class SanPhamController extends Controller
         $sanpham = SanPham::updateOrCreate(['id' => $id], $data);
         $sanpham->save();
 
-        // // Ảnh mô tả
-        // $files = $request->file('anhmota');
-        // if (!empty($files)) {
-        //     foreach ($files as $file) {
-        //         $fileName = $file->hashName();
-        //         $file->storeAs('/public/anhmota', $fileName);
-        //         $anhmota = new HinhAnh();
-        //         $anhmota->anhmota = $fileName;
-        //         $anhmota->id_sanpham = $sanpham->id;
-        //         $anhmota->save();
-        //     }
-        // }
-
-        return redirect()->route('sanpham.danhsach')->with('message', $action . ' dữ liệu thành công!');
+        return back()->with('message', $action . ' dữ liệu thành công!');
     }
     public function sua($id = null)
     {

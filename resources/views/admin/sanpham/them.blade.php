@@ -1,6 +1,9 @@
 <x-admin title="Thêm sản phẩm">
     <form action="{{ route('sanpham.luu') }}" method="post" enctype="multipart/form-data">
         <div class="row">
+            @if (Session::has('message'))
+                <p class="alert bg-success text-light">{{ Session::get('message') }}</p>
+            @endif
             <div class="col-md-6">
                 @csrf
                 <x-input name='tensanpham' label='Tên sản phẩm' />

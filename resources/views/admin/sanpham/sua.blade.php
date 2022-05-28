@@ -1,6 +1,9 @@
 <x-admin title="Sửa sản phẩm">
     <form action="{{ route('sanpham.luu', $sanpham->id) }}" method="post" enctype="multipart/form-data">
         <div class="row">
+            @if (Session::has('message'))
+                <p class="alert bg-success text-light">{{Session::get('message')}}</p>
+            @endif
             <div class="col-md-6">
                 @csrf
                 <x-input value='{{ $sanpham->tensanpham }}' name='tensanpham' label='Tên sản phẩm' />
@@ -37,7 +40,8 @@
                 <div class="mt-3">
                     <label for="" class="form-label">Hình ảnh</label>
                     <input name="hinhanh" type="file" id="file_image" class="form-control">
-                    <img id="preview_image" class="mt-3" src="/storage/{{ $sanpham->hinhanh }}" width="250" alt="">
+                    <img id="preview_image" class="mt-3" src="/storage/{{ $sanpham->hinhanh }}" width="250"
+                        alt="">
                 </div>
                 {{-- <div class="mt-3">
                     <label class="form-label">Ảnh mô tả</label>
