@@ -1,4 +1,4 @@
-<x-trangchu title="Trang chủ">
+<x-trangchu title="Update code">
     {{-- Danh mục và slides --}}
     @if (Session::has('success'))
         <p class="alert bg-success text-light">{{ Session::get('success') }}</p>
