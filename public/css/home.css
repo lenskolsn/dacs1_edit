@@ -1,0 +1,28 @@
+.logo_home img{
+    border-radius: 50%;
+    width: 50px;
+    animation: rotate 3s linear infinite;   
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.card{
+    transition: .5s;
+}
+.card:hover{
+    transform: scale(1.03);
+}
+#cards{
+    position: relative;
+}
+#cards #category{
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+}
