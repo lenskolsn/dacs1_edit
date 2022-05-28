@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helper\CartHelper;
 use App\Models\Banner;
+use App\Models\Comment;
 use App\Models\DanhMuc;
 use App\Models\DonHang;
 use App\Models\KhachHang;
@@ -29,6 +30,7 @@ class AdminController extends Controller
         $dh = DonHang::count();
         $bn = Banner::count();
         $bv = Posts::count();
-        return view('admin.dashboard',compact('sp','dm','nv','kh','dh','bn','bv'));
+        $cm = Comment::count();
+        return view('admin.dashboard',compact('sp','dm','nv','kh','dh','bn','bv','cm'));
     }
 }

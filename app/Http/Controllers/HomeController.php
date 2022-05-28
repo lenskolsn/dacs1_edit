@@ -9,6 +9,8 @@ use App\Models\SanPham;
 use App\Models\KhachHang;
 use App\Models\Posts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -81,6 +83,9 @@ class HomeController extends Controller
         $blog = Posts::findOrFail($id);
         $blog_new = Posts::orderByDesc('id')->get();
         $danhmucbaiviet = DanhMucBaiViet::all();
-        return view('blog.chitiet', compact('blog','blog_new','danhmucbaiviet'));
+        if (Auth::guard('khach_hangs')->check()) {
+            DB::table('posts')->where('id',$blog->id)->increment('tongluotxem');
+        }
+        return view('blog.chitiet', compact('blog', 'blog_new', 'danhmucbaiviet'));
     }
 }

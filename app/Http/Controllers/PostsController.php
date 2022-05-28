@@ -28,7 +28,7 @@ class PostsController extends Controller
         $rules = [
             'id_danhmuc' => 'required',
             'tieude' => 'required',
-            // 'hinhanh' => 'required',
+            'hinhanh' => 'required',
             'mota' => 'required',
             'noidung' => 'required',
         ];
@@ -36,7 +36,7 @@ class PostsController extends Controller
         $fields = [
             'id_danhmuc' => 'Danh mục bài viết',
             'tieude' => 'Tiêu đề',
-            // 'hinhanh' => 'Hình ảnh',
+            'hinhanh' => 'Hình ảnh',
             'mota' => 'Mô tả',
             'noidung' => 'Nội dung',
         ];

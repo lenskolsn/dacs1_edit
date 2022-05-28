@@ -1,5 +1,5 @@
 <x-admin title="Dashboard">
-    <p class=" display-5 text-center">Welcome! {{ Auth::user()->name}}</p>
+    <p class=" display-5 text-center">Welcome! {{ Auth::user()->name }}</p>
     <div class="row">
         <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
@@ -62,7 +62,21 @@
                 <div class="icon">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
-                <a href="{{ route('donhang.danhsach') }}" class="small-box-footer">Xem chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('donhang.danhsach') }}" class="small-box-footer">Xem chi tiết <i
+                        class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-2">
+            <div class="small-box text-light" style="background: #6f42c1">
+                <div class="inner">
+                    <h5>Comment</h5>
+                    <p class="fs-5 fw-bold">{{ $cm }}</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-message"></i>
+                </div>
+                <a href="{{ route('comment.danhsach') }}" class="small-box-footer">Xem chi tiết <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-2">
@@ -74,7 +88,8 @@
                 <div class="icon">
                     <i class="fas fa-feather-alt"></i>
                 </div>
-                <a href="{{ route('post.danhsach') }}" class="small-box-footer">Xem chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('post.danhsach') }}" class="small-box-footer">Xem chi tiết <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-2">
@@ -86,8 +101,10 @@
                 <div class="icon">
                     <i class="fas fa-image"></i>
                 </div>
-                <a href="{{ route('banner.danhsach') }}" class="small-box-footer">Xem chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('banner.danhsach') }}" class="small-box-footer">Xem chi tiết <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
+
     </div>
 </x-admin>

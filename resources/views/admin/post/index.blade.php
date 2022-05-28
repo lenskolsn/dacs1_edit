@@ -25,7 +25,7 @@
                             <p style="font-size: 13px;">{{ $item->mota }}</p>
                         </div>
                     </td>
-                    <td>{{ $item->tongluotxem }}</td>
+                    <td class="text-secondary"><i class="fas fa-eye"></i> {{ $item->tongluotxem }}</td>
                     <td>{{ $item->danhmucbaiviet->tendanhmuc }}</td>
                     <td>{{ $item->tacgia->name }}</td>
                     <td>{{ $item->created_at->format('d/m/Y H:i:s') }}</td>

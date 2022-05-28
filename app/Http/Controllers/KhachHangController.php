@@ -146,13 +146,7 @@ class KhachHangController extends Controller
         $khachhang->password = Hash::make($khachhang->password);
         $khachhang->save();
 
-        // $data->name = $request->name;
-        // $data->email = $request->email;
-        // $data->phone = $request->phone;
-        // $data->password = Hash::make($request->password);
-        // $data->save();
-
-        return redirect()->route('khachhang.dangnhap')->with('message', 'Tạo tài khoản thành công!');
+        return back()->with('message', 'Tạo tài khoản thành công!');
     }
     // Post Đăng nhập
     public function luudangnhap(Request $request)

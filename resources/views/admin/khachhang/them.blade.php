@@ -1,7 +1,7 @@
 <x-admin title="Thêm khách hàng">
     <div class="row">
-        @if (Session::has('success'))
-            <p class="alert bg-success text-light">{{ Session::get('success') }}</p>
+        @if (Session::has('message'))
+            <p class="alert bg-success text-light">{{ Session::get('message') }}</p>
         @endif
         <div class="col-md-6">
             <form action="{{ route('khachhang.post_dangky') }}" method="post">
