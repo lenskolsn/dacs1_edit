@@ -23,8 +23,8 @@
                     <tr class="text-center">
                         <td>{{ $item->id }}</td>
                         <td>
-                            <img class="image rounded-circle" src="/storage/avatars/{{ $item->avatar }}" alt=""
-                                style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
+                            <img class="image img-thumbnail rounded-circle" src="/storage/avatars/{{ $item->avatar }}" alt=""
+                                width="80" height="80">
                         </td>
                         <td>{{ $item->name }} {{ $item->ten }}</td>
                         <td>{{ $item->email }}</td>

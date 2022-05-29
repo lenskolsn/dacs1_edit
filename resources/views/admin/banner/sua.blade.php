@@ -6,7 +6,7 @@
                 <x-input value='{{ $banner->ten }}' name='ten' label='Tên banner' />
                 {{-- <x-input name='mota' label='Mô tả'/> --}}
                 <x-textarea value="{{ $banner->mota }}" name="mota" label="Mô tả" />
-                <button class="btn btn-success text-light mt-3">Cập nhật dữ liệu</button>
+                    <button class="btn text-light mt-3" style="background: #66a182;">Cập nhật dữ liệu</button>
             </div>
             <div class="col-md-6">
                 {{-- <x-input name="hinhanh" label="Hình ảnh" type="file" /> --}}

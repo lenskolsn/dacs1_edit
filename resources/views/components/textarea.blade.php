@@ -11,5 +11,5 @@ $placeholder = $attributes['placeholder']
         rows="3">{{ $value }}</textarea>
 </div>
 @error($name)
-    <p class="text-danger">Nội dung không được bỏ trống!</p>
+    <p class="text-danger">{{$message}}</p>
 @enderror

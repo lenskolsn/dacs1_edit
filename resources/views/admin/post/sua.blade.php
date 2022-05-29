@@ -31,7 +31,7 @@
                 @enderror
             </div>
             <div class="col-md-8 mt-3">
-                <button class="btn btn-success text-light">Cập nhật dữ liệu</button>
+                <button class="btn text-light mt-3" style="background: #66a182;">Cập nhật dữ liệu</button>
             </div>
         </form>
     </div>

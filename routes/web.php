@@ -48,6 +48,8 @@ Route::prefix('admin')->group(function () {
     // Group Comment
     Route::prefix('comment')->group(function () {
         Route::get('/', [CommentController::class, 'index'])->name('comment.danhsach');
+        Route::get('/sua/{id?}', [CommentController::class, 'sua'])->name('comment.sua');
+        Route::post('/luu/{id?}', [CommentController::class, 'post_sua'])->name('comment.luu');
         Route::get('/xoa/{id?}', [CommentController::class, 'xoa'])->name('comment.xoa');
     });
     // Group post

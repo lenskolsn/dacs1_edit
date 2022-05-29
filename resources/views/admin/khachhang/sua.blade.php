@@ -28,7 +28,8 @@
                 <x-input value='{{ $khachhang->name }}' name='name' label='Họ tên' />
                 <x-input value='{{ $khachhang->email }}' name='email' label='Email' />
                 <x-input value='{{ $khachhang->phone }}' name='phone' label='Số điện thoại' />
-                <button class="btn btn-success mt-3 text-light">Cập nhật tài khoản</button>
+                <x-input name='password' label='Mật khẩu' />
+                <button class="btn text-light mt-3" style="background: #66a182;">Cập nhật dữ liệu</button>
             </form>
         </div>
     </div>
