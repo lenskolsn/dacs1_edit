@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\ChiTietDonHang;
-use App\Models\Comment;
 use App\Models\DonHang;
 use App\Models\KhachHang;
 use App\Models\SanPham;
