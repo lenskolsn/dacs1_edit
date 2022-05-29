@@ -2,7 +2,7 @@
     @if (Session::get('message'))
         <p class="alert bg-success text-light">{{ Session::get('message') }}</p>
     @endif
-    <table class="table table-bordered">
+    <table class="table">
         <thead class="text-light" style="background: #66a182;">
             <tr>
                 <th>#</th>

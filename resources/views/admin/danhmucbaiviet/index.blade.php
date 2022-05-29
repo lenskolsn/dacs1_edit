@@ -22,7 +22,7 @@
                     <tr>
                         <th>#</th>
                         <th>Tên danh mục</th>
-                        <th>Tổng bài viết</th>
+                        <th class="text-center">Tổng bài viết</th>
                         <th>Tạo lúc</th>
                         <th>Actions</th>
                     </tr>
@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->tendanhmuc }}</td>
-                            <td>{{ $item->posts->count() }}</td>
+                            <td class="text-center">{{ $item->posts->count() }}</td>
                             <td>{{ $item->created_at->format('d/m/Y H:i:s') }}</td>
                             <td>
                                 <a href="{{ route('danhmucbaiviet.sua', $item->id) }}"

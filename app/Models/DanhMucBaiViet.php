@@ -9,7 +9,8 @@ class DanhMucBaiViet extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function posts(){
-        return $this->hasMany(Posts::class, 'id_danhmuc','id');
+    public function posts()
+    {
+        return $this->hasMany(Posts::class, 'id_danhmuc', 'id');
     }
 }

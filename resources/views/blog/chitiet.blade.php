@@ -3,10 +3,20 @@
 
     <div class="row border border-1 shadow-sm py-3">
         <div class="col-md" style="border-right: 1px solid #cecece;">
+            <ul class="d-flex p-0" style="list-style: none;">
+                {{-- <li class="me-3"><a href="#" class="text-decoration-none text-dark fw-bold">DANH MỤC</a></li> --}}
+                @foreach ($danhmucbaiviet as $item)
+                    <li class="me-3"><a href="{{ route('blog.danhmucblog', $item->id) }}"
+                            class="text-decoration-none text-dark fw-bold"
+                            style="text-transform: uppercase;">{{ $item->tendanhmuc }}</a></li>
+                @endforeach
+            </ul>
+            <hr>
             <h4 class="fw-bold">{{ $blog->tieude }}</h4>
             <hr>
             <span class="text-secondary" style="font-size: 13px;">{{ $blog->tacgia->name }} /
-                {{ $blog->created_at->format('d/m/Y H:i:s') }} / <i class="fas fa-eye" style="font-size: 13px;"> {{$blog->tongluotxem}}</i></span>
+                {{ $blog->created_at->format('d/m/Y H:i:s') }} / <i class="fas fa-eye" style="font-size: 13px;">
+                    {{ $blog->tongluotxem }}</i></span>
             <hr>
             {!! $blog->noidung !!}
         </div>

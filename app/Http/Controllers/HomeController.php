@@ -84,8 +84,15 @@ class HomeController extends Controller
         $blog_new = Posts::orderByDesc('id')->get();
         $danhmucbaiviet = DanhMucBaiViet::all();
         if (Auth::guard('khach_hangs')->check()) {
-            DB::table('posts')->where('id',$blog->id)->increment('tongluotxem');
+            DB::table('posts')->where('id', $blog->id)->increment('tongluotxem');
         }
         return view('blog.chitiet', compact('blog', 'blog_new', 'danhmucbaiviet'));
+    }
+    function danhmucblog($id = null)
+    {
+        $danhmuc = DanhMucBaiViet::findOrFail($id);
+        $danhmucbaiviet = DanhMucBaiViet::all();
+        $blog_new = Posts::orderByDesc('id')->get();
+        return view('blog.baiviettheodanhmuc', compact('danhmucbaiviet', 'danhmuc', 'blog_new'));
     }
 }

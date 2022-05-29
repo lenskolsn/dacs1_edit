@@ -28,6 +28,7 @@ Route::get('xoabinhluan/{id?}', [CommentController::class, 'xoabinhluan'])->name
 Route::prefix('blog')->group(function () {
     Route::get('/', [HomeController::class, 'blog'])->name('blog');
     Route::get('/chitiet/{id?}', [HomeController::class, 'blog_chitiet'])->name('blog.chitiet');
+    Route::get('/danhmuc/{id?}', [HomeController::class, 'danhmucblog'])->name('blog.danhmucblog');
 });
 // Group admin
 Route::prefix('admin')->group(function () {

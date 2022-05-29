@@ -1,4 +1,4 @@
-<x-trangchu title="Blog">
+<x-trangchu title="Danh mục bài viết">
     <div class="row d-flex justify-content-between">
         <div class="col-lg-8 col-md-12 border border-1 py-2 bg-light">
             <hr>
@@ -11,30 +11,34 @@
                 @endforeach
             </ul>
             <hr>
-            @foreach ($blog as $item)
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-lg-4 col-md-3">
-                            <a href="{{ route('blog.chitiet', $item->id) }}"><img
-                                    src="/storage/post/{{ $item->hinhanh }}" alt="{{ $item->tieude }}"
-                                    class="w-100 img-thumbnail"></a>
-                        </div>
-                        <div class="col-lg-8 col-md-9">
-                            <div class="card-body">
-                                <a href="{{ route('blog.chitiet', $item->id) }}"
-                                    class="text-decoration-none text-dark">
-                                    <h5 class="card-title">{{ $item->tieude }}</h5>
-                                </a>
-                                <p class="card-text">{{ $item->mota }}</p>
-                                <p class="card-text"><small
-                                        class="text-muted">{{ $item->created_at->format('d/m/Y H:i:s') }} by
-                                        {{ $item->tacgia->name }}</small>
-                                </p>
+            @if ($danhmuc->posts->count() > 0)
+                @foreach ($danhmuc->posts as $item)
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-lg-4 col-md-3">
+                                <a href="{{ route('blog.chitiet', $item->id) }}"><img
+                                        src="/storage/post/{{ $item->hinhanh }}" alt="{{ $item->tieude }}"
+                                        class="w-100 img-thumbnail"></a>
+                            </div>
+                            <div class="col-lg-8 col-md-9">
+                                <div class="card-body">
+                                    <a href="{{ route('blog.chitiet', $item->id) }}"
+                                        class="text-decoration-none text-dark">
+                                        <h5 class="card-title">{{ $item->tieude }}</h5>
+                                    </a>
+                                    <p class="card-text">{{ $item->mota }}</p>
+                                    <p class="card-text"><small
+                                            class="text-muted">{{ $item->created_at->format('d/m/Y H:i:s') }} by
+                                            {{ $item->tacgia->name }}</small>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            @else
+                <p class="text-danger text-center fs-5">Chưa có bài viết!!!</p>
+            @endif
         </div>
         <div class="col-lg-3 col-md-12 border border-1 py-2 bg-light">
             <span class="badge bg-dark">Bài viết phổ biến</span>

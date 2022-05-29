@@ -25,12 +25,12 @@
         </div>
     </div>
     <div class="col-md-12 mt-3 p-0">
-        <table class="table shadow-sm">
+        <table class="table">
             <thead class="text-light" style="background: #66a182;">
                 <th>#</th>
                 <th>Tên danh mục</th>
-                <th>Tổng sản phẩm</th>
-                <th>Trạng thái</th>
+                <th class="text-center">Tổng sản phẩm</th>
+                <th class="text-center">Trạng thái</th>
                 <th>Actions</th>
             </thead>
             <tbody>
@@ -38,8 +38,8 @@
                     <tr>
                         <td>{{ $dm->id }}</td>
                         <td>{{ $dm->tendanhmuc }}</td>
-                        <td>{{ $dm->san_phams->count() }}</td>
-                        <td>
+                        <td class="text-center">{{ $dm->san_phams->count() }}</td>
+                        <td class="text-center">
                             @if ($dm->trangthai == 0)
                                 <span class="badge bg-danger">Ẩn</span>
                             @else
