@@ -23,7 +23,7 @@
     </div>
     <div class="col-md-12 p-0 mt-3">
         <table class="table shadow-sm">
-            <thead class="text-light" style="background: #66a182;">
+            <thead class="text-light text-center" style="background: #66a182;">
                 <th>#</th>
                 <th>Tên sản phẩm</th>
                 <th>Hình ảnh</th>
@@ -42,17 +42,17 @@
                             <img class="img-thumbnail" src="/storage/{{ $sp->hinhanh }}" width="100" 
                                 alt="">
                         </td>
-                        <td>{{ $sp->danh_mucs->tendanhmuc ?? '' }}</td>
-                        <td>{{ number_format($sp->gia) }}</td>
+                        <td class="text-center">{{ $sp->danh_mucs->tendanhmuc ?? '' }}</td>
+                        <td class="text-center">{{ number_format($sp->gia) }}</td>
                         <td class="w-25">{{ $sp->mota }}</td>
-                        <th>
+                        <th class="text-center">
                             @if ($sp->trangthai == 1)
                                 <span class="badge bg-success">Còn hàng</span>
                             @else
                                 <span class="badge bg-danger">Hết hàng</span>
                             @endif
                         </th>
-                        <td>
+                        <td class="text-center">
                             <a href="{{ route('sanpham.chitiet', $sp->id) }}" class="btn btn-info text-light"><i
                                     class="fas fa-eye"></i></a>
                             <a href="{{ route('sanpham.sua', $sp->id) }}" class="btn btn-warning text-light"><i

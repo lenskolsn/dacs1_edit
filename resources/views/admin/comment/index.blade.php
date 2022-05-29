@@ -4,8 +4,8 @@
             <tr>
                 <th>#</th>
                 <th>Khách hàng</th>
-                <th>Sản phẩm</th>
-                <th>Actions</th>
+                <th class="text-center">Sản phẩm</th>
+                <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,12 +19,12 @@
                             <p>{{ $cm->noidung }}</p>
                         </div>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <a href="{{ route('sanpham.chitiet', $cm->sanpham->id) }}"
                             class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             title="Click để xem sản phẩm">{{ $cm->sanpham->tensanpham }}</a>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <a href="{{ route('comment.xoa', $cm->id) }}" class="btn btn-danger"><i
                                 class="fas fa-trash"></i></a>
                     </td>

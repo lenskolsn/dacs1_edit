@@ -5,7 +5,7 @@
         @endif
         <div class="col-md">
             <table class="table shadow-sm">
-                <thead class="text-light" style="background: #66a182;">
+                <thead class="text-light text-center" style="background: #66a182;">
                     <tr>
                         <th>#</th>
                         <th>Tên khách hàng</th>
@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                     @foreach ($donhang as $item)
-                        <tr>
+                        <tr class="text-center">
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->tenkhachhang }}</td>
                             <td>{{ $item->diachi }}</td>

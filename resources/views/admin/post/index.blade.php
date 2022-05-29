@@ -6,12 +6,12 @@
         <thead class="text-light" style="background: #66a182;">
             <tr>
                 <th>#</th>
-                <th style="width: 500px;">Bài viết</th>
-                <th>Lượt xem</th>
-                <th>Danh mục</th>
-                <th>Tác giả</th>
-                <th>Tạo lúc</th>
-                <th>Actions</th>
+                <th style="width: 500px;" class="text-center">Bài viết</th>
+                <th class="text-center">Lượt xem</th>
+                <th class="text-center">Danh mục</th>
+                <th class="text-center">Tác giả</th>
+                <th class="text-center">Tạo lúc</th>
+                <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,11 +25,11 @@
                             <p style="font-size: 13px;">{{ $item->mota }}</p>
                         </div>
                     </td>
-                    <td class="text-secondary"><i class="fas fa-eye"></i> {{ $item->tongluotxem }}</td>
-                    <td>{{ $item->danhmucbaiviet->tendanhmuc }}</td>
-                    <td>{{ $item->tacgia->name }}</td>
-                    <td>{{ $item->created_at->format('d/m/Y H:i:s') }}</td>
-                    <td>
+                    <td class="text-secondary text-center"><i class="fas fa-eye"></i> {{ $item->tongluotxem }}</td>
+                    <td class="text-center">{{ $item->danhmucbaiviet->tendanhmuc }}</td>
+                    <td class="text-center">{{ $item->tacgia->name }}</td>
+                    <td class="text-center">{{ $item->created_at->format('d/m/Y H:i:s') }}</td>
+                    <td class="text-center">
                         <a href="{{ route('post.chitiet', $item->id) }}" class="btn btn-info text-light"><i
                                 class="fas fa-eye"></i></a>
                         <a href="{{ route('post.sua', $item->id) }}" class="btn btn-warning text-light"><i

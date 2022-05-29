@@ -8,7 +8,7 @@
 
         <table class="table shadow-sm">
             <thead class="text-light" style="background: #66a182;">
-                <tr>
+                <tr class="text-center">
                     <th>#</th>
                     <th>Avatar</th>
                     <th>Tên khách hàng</th>
@@ -20,7 +20,7 @@
             </thead>
             <tbody>
                 @foreach ($khachhang as $item)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{ $item->id }}</td>
                         <td>
                             <img class="image rounded-circle" src="/storage/avatars/{{ $item->avatar }}" alt=""

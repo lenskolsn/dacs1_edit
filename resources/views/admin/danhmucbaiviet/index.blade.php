@@ -24,7 +24,7 @@
                         <th>Tên danh mục</th>
                         <th class="text-center">Tổng bài viết</th>
                         <th>Tạo lúc</th>
-                        <th>Actions</th>
+                        <th class="text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +34,7 @@
                             <td>{{ $item->tendanhmuc }}</td>
                             <td class="text-center">{{ $item->posts->count() }}</td>
                             <td>{{ $item->created_at->format('d/m/Y H:i:s') }}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="{{ route('danhmucbaiviet.sua', $item->id) }}"
                                     class="btn btn-warning text-light"><i class="fas fa-pen"></i></a>
                                 <a href="{{ route('danhmucbaiviet.xoa', $item->id) }}"

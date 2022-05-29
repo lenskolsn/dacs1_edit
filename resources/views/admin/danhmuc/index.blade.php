@@ -31,7 +31,7 @@
                 <th>Tên danh mục</th>
                 <th class="text-center">Tổng sản phẩm</th>
                 <th class="text-center">Trạng thái</th>
-                <th>Actions</th>
+                <th class="text-center">Actions</th>
             </thead>
             <tbody>
                 @foreach ($danhmuc as $dm)
@@ -46,7 +46,7 @@
                                 <span class="badge bg-success">Hiển thị </span>
                             @endif
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="{{ route('danhmuc.sua', $dm->id) }}" class="btn btn-warning text-light"><i
                                     class="fas fa-pen"></i></a>
                             <a onclick="{return confirm('bạn có muốn xóa không?')}"
