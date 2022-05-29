@@ -85,6 +85,9 @@ Route::prefix('taikhoan')->group(function () {
     Route::post('/dangnhap', [KhachHangController::class, 'luudangnhap'])->name('khachhang.post_dangnhap');
     // Dang xuat khach hang
     Route::get('/dangxuat', [KhachHangController::class, 'dangxuat'])->name('khachhang.dangxuat');
+    // Doi mat khau
+    Route::get('/doimatkhau', [KhachHangController::class, 'doimatkhau'])->name('khachhang.doimatkhau');
+    Route::post('/doimatkhau', [KhachHangController::class, 'post_doimatkhau'])->name('khachhang.post_doimatkhau');
 });
 // Group giỏ hàng
 Route::prefix('giohang')->middleware('kh')->group(function () {

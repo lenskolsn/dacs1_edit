@@ -8,7 +8,8 @@ $label = $attributes['label'];
 
 <div class="mt-3">
     <label for="{{ $name }}" class='form-label'>{{ $label }}:</label>
-    <input type='{{ $type }}' name='{{ $name }}' class='form-control @error($name) is-invalid @enderror' id='{{ $name }}' value='{{ $old_value }}'>
+    <input type='{{ $type }}' name='{{ $name }}' class='form-control @error($name) is-invalid @enderror'
+        id='{{ $name }}' value='{{ $old_value }}'>
 </div>
 
 @error($name)

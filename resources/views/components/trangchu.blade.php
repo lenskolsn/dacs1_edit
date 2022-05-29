@@ -16,6 +16,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
         body {
             font-family: 'Roboto', sans-serif;
         }
@@ -101,6 +102,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('khachhang.info') }}"><i
                                                 class="fas fa-user-circle"></i> Thông tin </a></li>
+                                    <li><a class="dropdown-item" href="{{ route('khachhang.doimatkhau') }}"><i
+                                                class="fas fa-key"></i> Đổi mật khẩu </a></li>
                                     <li><a class="dropdown-item" href="{{ route('khachhang.dangxuat') }}"><i
                                                 class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
                                 </ul>

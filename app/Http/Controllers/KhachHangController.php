@@ -67,7 +67,7 @@ class KhachHangController extends Controller
     {
         $khachhang = KhachHang::findOrFail($id);
         foreach ($khachhang->comment as $cm) {
-            $cm->delete(); 
+            $cm->delete();
         }
         KhachHang::destroy($id);
         return back()->with('success', 'Xóa thành công!');
@@ -180,5 +180,37 @@ class KhachHangController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('trangchu');
+    }
+    function doimatkhau()
+    {
+        return view('account.doimatkhau');
+    }
+    function post_doimatkhau(Request $request)
+    {
+        $data = $request->all();
+
+
+        $validator = Validator::make($data, [
+            'old_password' => 'required',
+            'password' => 'required|min:5',
+            'confirm_password' => 'required|same:password|min:5',
+        ], [], [
+            'old_password' => 'Mật khẩu cũ',
+            'password' => 'Mật khẩu mới',
+            'confirm_password' => 'Nhập lại mật khẩu mới',
+        ])->validate();
+
+        $password = Auth::guard('khach_hangs')->user()->password;
+        $id = Auth::guard('khach_hangs')->user()->id;
+
+        if (Hash::check($request->old_password, $password)) {
+            $khachhang = KhachHang::findOrFail($id);
+            $khachhang->password = Hash::make($request->password);
+            $khachhang->save();
+            Auth::guard('khach_hangs')->logout();
+            return redirect()->route('khachhang.dangnhap');
+        } else {
+            return back()->with('error', 'Mật khẩu cũ không chính xác');
+        }
     }
 }
