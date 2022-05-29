@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ChiTietDonHang;
+use App\Models\Comment;
 use App\Models\DonHang;
 use App\Models\KhachHang;
 use App\Models\SanPham;
@@ -64,6 +65,10 @@ class KhachHangController extends Controller
     // Xóa khách hàng
     public function xoa($id = null)
     {
+        $khachhang = KhachHang::findOrFail($id);
+        foreach ($khachhang->comment as $cm) {
+            $cm->delete(); 
+        }
         KhachHang::destroy($id);
         return back()->with('success', 'Xóa thành công!');
     }
@@ -118,14 +123,14 @@ class KhachHangController extends Controller
             'email' => 'required|unique:khach_hangs|email',
             'phone' => 'required|numeric',
             'password' => 'required| min:5',
-            'confirm_password'=>'required| same:password'
+            'confirm_password' => 'required| same:password'
         ];
         $fields = [
             'name' => 'Họ tên',
             'email' => 'Email',
             'phone' => 'Số điện thoại',
             'password' => 'Mật khẩu',
-            'confirm_password'=>'Mật khẩu nhập lại'
+            'confirm_password' => 'Mật khẩu nhập lại'
         ];
 
         $validator = Validator::make($data, $rules, [], $fields);

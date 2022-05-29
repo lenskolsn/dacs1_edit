@@ -20,4 +20,7 @@ class KhachHang extends Authenticatable
     public function don_hangs(){
         return $this->hasMany(DonHang::class,'id_khachhang','id');
     }
+    public function comment(){
+        return $this->hasMany(Comment::class, 'khachhang_id', 'id');
+    }
 }

@@ -3,10 +3,9 @@
     <form action="{{route('khachhang.post_dangky')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
-
                 {{-- Thông báo nếu tạo tài khoản thành công --}}
-                @if (Session::has('success'))
-                    <p class="alert bg-success text-light">{{Session::get('success')}} <a class="text-decoration-none text-info" href="{{route('khachhang.dangnhap')}}">Đăng nhập</a></p> 
+                @if (Session::has('message'))
+                    <p class="alert bg-success text-light">{{Session::get('message')}} <a class="text-decoration-none text-info" href="{{route('khachhang.dangnhap')}}">Đăng nhập</a></p> 
                 @endif
 
                 <h5>THÔNG TIN CÁ NHÂN</h5>

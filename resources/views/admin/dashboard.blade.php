@@ -4,8 +4,8 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h5>Tổng sản phẩm</h5>
-                    <p class="fs-5 fw-bold">{{ $sp }}</p>
+                    <h3>{{ $sp }}</h3>
+                    <p>Sản phẩm</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-shopping-bag"></i>
@@ -17,8 +17,8 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h5>Danh mục</h5>
-                    <p class="fs-5 fw-bold">{{ $dm }}</p>
+                    <h3>{{ $dm }}</h3>
+                    <p>Danh mục</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-clipboard-list"></i>
@@ -30,8 +30,8 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-dark text-light">
                 <div class="inner">
-                    <h5>Nhân viên</h5>
-                    <p class="fs-5 fw-bold">{{ $nv }}</p>
+                    <h3>{{ $nv }}</h3>
+                    <p>Nhân viên</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-user-shield text-secondary"></i>
@@ -43,8 +43,8 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-warning text-light">
                 <div class="inner">
-                    <h5>Khách hàng</h5>
-                    <p class="fs-5 fw-bold">{{ $kh }}</p>
+                    <h3>{{ $kh }}</h3>
+                    <p>Khách hàng</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-user-astronaut"></i>
@@ -53,11 +53,11 @@
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <div class="col-lg-3 col-2">
+        <div class="col-lg-3 col-6">
             <div class="small-box bg-danger text-light">
                 <div class="inner">
-                    <h5>Đơn Hàng</h5>
-                    <p class="fs-5 fw-bold">{{ $dh }}</p>
+                    <h3>{{ $dh }}</h3>
+                    <p>Đơn Hàng</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-shopping-cart"></i>
@@ -66,11 +66,11 @@
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <div class="col-lg-3 col-2">
+        <div class="col-lg-3 col-6">
             <div class="small-box text-light" style="background: #6f42c1">
                 <div class="inner">
-                    <h5>Comment</h5>
-                    <p class="fs-5 fw-bold">{{ $cm }}</p>
+                    <h3>{{ $cm }}</h3>
+                    <p>Comment</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-message"></i>
@@ -79,11 +79,11 @@
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <div class="col-lg-3 col-2">
+        <div class="col-lg-3 col-6">
             <div class="small-box text-light" style="background: rgb(255, 0, 115);">
                 <div class="inner">
-                    <h5>Bài viết</h5>
-                    <p class="fs-5 fw-bold">{{ $bv }}</p>
+                    <h3>{{ $bv }}</h3>
+                    <p>Bài viết</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-feather-alt"></i>
@@ -92,11 +92,11 @@
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <div class="col-lg-3 col-2">
-            <div class="small-box bg-secondary text-light">
+        <div class="col-lg-3 col-6">
+            <div class="small-box text-light bg-secondary">
                 <div class="inner">
-                    <h5>Banner</h5>
-                    <p class="fs-5 fw-bold">{{ $bn }}</p>
+                    <h3>{{ $bn }}</h3>
+                    <p>Banner</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-image"></i>
@@ -105,6 +105,5 @@
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-
     </div>
 </x-admin>

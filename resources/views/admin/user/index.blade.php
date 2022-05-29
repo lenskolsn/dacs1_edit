@@ -1,5 +1,11 @@
 <x-admin title="Danh sách nhân viên">
     <div class="col-md-8 m-auto">
+        @if (Session::has('success'))
+        <p class="alert bg-success">{{Session::get('success')}}</p>   
+        @endif
+        @if(Session::has('error'))
+        <p class="alert bg-danger">{{Session::get('error')}}</p>   
+        @endif
         <table class="table shadow-sm">
             <thead class="text-light" style="background: #66a182;">
                 <tr>

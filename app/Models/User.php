@@ -27,4 +27,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+    public function posts(){
+        return $this->hasMany(Posts::class, 'id_tacgia', 'id');
+    }
 }

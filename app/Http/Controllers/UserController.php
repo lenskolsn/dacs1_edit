@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use function PHPUnit\Framework\isEmpty;
+
 class UserController extends Controller
 {
     function index()
@@ -74,8 +76,13 @@ class UserController extends Controller
     }
     function xoa($id = null)
     {
-        User::destroy($id);
-        return back();
+        $user = User::findOrFail($id);
+        if ($user->posts->count() != null) {
+            return back()->with('error', 'Không thể xóa!');
+        } else {
+            User::destroy($id);
+            return back()->with('success', 'Xóa thành công!');
+        }
     }
     function dangnhap()
     {
