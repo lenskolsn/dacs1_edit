@@ -17,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(IdeHelperServiceProvider::class);
+        }
     }
 
     /**
@@ -29,8 +31,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         $danhmuc = DanhMuc::all();
-        View::share(['danhmuc'=>$danhmuc]);
-        
+        View::share(['danhmuc' => $danhmuc]);
+
         view()->composer('*', function ($view) {
             $view->with([
                 'cart' => new CartHelper()
