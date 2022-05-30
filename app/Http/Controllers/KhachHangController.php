@@ -178,7 +178,7 @@ class KhachHangController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('trangchu');
+        return back();
     }
     function doimatkhau()
     {

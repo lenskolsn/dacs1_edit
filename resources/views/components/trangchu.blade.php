@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-6">
-                    <h5 class="mt-2" style="font-family: 'Ultra', serif;"><i>Le Nam - Chi Hao</i></h5>
+                    <h5 class="mt-2" style="font-family: 'Ultra', serif;"><i>Nam Lê</i></h5>
                 </div>
                 <div class="col-6">
                     <ul style="list-style: none;" class="d-flex align-items-center justify-content-end m-0 py-1">

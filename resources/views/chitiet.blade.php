@@ -118,10 +118,12 @@
                                             <p>{{ $cm->noidung }}</p>
                                         </div>
                                     </div>
-                                    @if (Auth::guard('khach_hangs')->user()->id == $cm->khachhang_id)
+
+                                    @if (Auth::guard('khach_hangs')->check() && Auth::guard('khach_hangs')->user()->id == $cm->khachhang_id)
                                         <a href="{{ route('xoabinhluan', $cm->id) }}"
                                             class="text-decoration-none mx-3 btn btn-danger text-light btn-sm">Xóa</a>
                                     @endif
+
                                 </div>
                             @endif
                         @endforeach
