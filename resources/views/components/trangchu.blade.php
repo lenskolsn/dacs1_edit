@@ -47,6 +47,8 @@
         }
 
         .logo {
+            width: 100px;
+            height: 100px;
             animation: rotate 5s linear infinite;
         }
 
@@ -82,7 +84,7 @@
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-6">
-                    <h5 class="mt-2" style="font-family: 'Ultra', serif;"><i>Nam Lê</i></h5>
+                    <h5 class="mt-2" style="font-family: 'Ultra', serif;"><i>HaoNam Shop</i></h5>
                 </div>
                 <div class="col-6">
                     <ul style="list-style: none;" class="d-flex align-items-center justify-content-end m-0 py-1">
@@ -206,8 +208,7 @@
                     <div>
                         <div class="text-center">
                             <img class="logo rounded-circle mb-3"
-                                src="https://i1.sndcdn.com/artworks-000092107228-vfimi5-t500x500.jpg" width="100"
-                                height="100" alt="">
+                                src="https://i.pinimg.com/236x/fe/cf/d7/fecfd7f986ddd2c9f6a57a38b216082e--device-circles.jpg">
                         </div>
                         <div class="map">
                             <p><i class="fas fa-map-marker-alt me-3"></i>Hồng Ngự - Đồng Tháp</p>

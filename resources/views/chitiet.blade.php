@@ -80,7 +80,7 @@
                                 vào
                                 giỏ</a>
                         @else
-                            <p class="text-light bg-danger p-1 rounded-1 fs-5">Sản phẩm đã hết hàng!</p>
+                            <p class="text-light text-center bg-danger p-1 rounded-1 fs-5">Sản phẩm đã hết hàng!</p>
                         @endif
                         {{-- <a href="{{ route('dathang') }}" class="btn btn-success mt-3">Mua ngay</a> --}}
                     </form>

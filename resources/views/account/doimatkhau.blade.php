@@ -6,9 +6,9 @@
         <h4 class="text-center">Đổi mật khẩu</h4>
         <form action="{{ route('khachhang.post_doimatkhau') }}" method="post">
             @csrf
-            <x-input name="old_password" type="password" label="Mật khẩu cũ" />
-            <x-input name="password" type="password" label="Mật khẩu mới" />
-            <x-input name="confirm_password" type="password" label="Nhập lại mật khẩu mới" />
+            <x-input placeholder="**********" name="old_password" type="password" label="Mật khẩu cũ" />
+            <x-input placeholder="**********" name="password" type="password" label="Mật khẩu mới" />
+            <x-input placeholder="**********" name="confirm_password" type="password" label="Nhập lại mật khẩu mới" />
             <button class="btn btn-dark mt-3">Cập nhật mật khẩu</button>
         </form>
     </div>
