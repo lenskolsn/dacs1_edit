@@ -22,6 +22,7 @@ class CartHelper
       'hinhanh' => $product->hinhanh,
       'gia' => $product->gia,
       'mau' => $product->mau,
+      'soluong' => $product->soluong,
       'size' => $product->size,
       'quantity' => $quantity,
     ];

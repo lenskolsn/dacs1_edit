@@ -163,7 +163,7 @@
                             <div class="d-flex align-items-center">
                                 <a href="{{ route('cart.xem') }}" class="text-decoration-none text-light ms-3">
                                     <span class="position-relative">
-                                        <i class="fas fs-4 fa-shopping-bag text-light"></i>
+                                        <i class="fas fs-4 fa-shopping-cart text-light"></i>
                                         <span
                                             class="position-absolute top-1 start-105 translate-middle badge rounded-pill bg-danger">
                                             {{ $cart->total_quantity }}
@@ -176,7 +176,7 @@
                             @else
                                 <a href="{{ route('cart.xem') }}" class="text-decoration-none text-light mx-3">
                                     <span class="position-relative">
-                                        <i class="fas fs-4 fa-shopping-bag text-light"></i>
+                                        <i class="fas fas-shopping-cart fs-4 text-light"></i>
                                         <span
                                             class="position-absolute top-1 start-105 translate-middle badge rounded-pill bg-danger">
                                             0

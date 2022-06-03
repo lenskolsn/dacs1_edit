@@ -1,11 +1,14 @@
 <x-trangchu title="Giỏ hàng">
     <div class="row">
-        @if(Session::has('error'))
+        @if (Session::has('error'))
             <p class="alert bg-danger text-light">{{ Session::get('error') }}</p>
         @endif
-        @if(Session::has('success'))
+        @if (Session::has('success'))
             <p class="alert bg-success text-light">{{ Session::get('success') }}</p>
         @endif
+        @error('quantity')
+            <p class="alert bg-danger text-light"></p>
+        @enderror
         <h5 class="">GIỎ HÀNG</h5>
         <div class="col-md rounded shadow-sm bg-light p-2">
             @if ($cart->total_quantity == 0)
@@ -38,8 +41,9 @@
                                 <td class="text-danger"><b>{{ number_format($item['gia']) }}</b></td>
                                 <form action="{{ route('cart.capnhat', $item['id']) }}" method="get">
                                     <td class="d-flex justify-content-center" style="width: 250px;">
-                                        <input type="number" value="{{ $item['quantity'] }}" name="quantity"
-                                            class="form-control" style="width: 100px;">
+                                        <input type="number" value="{{ $item['quantity'] }}" min="1"
+                                            max="{{ $item['soluong'] }}" name="quantity" class="form-control"
+                                            style="width: 100px;">
                                         <button class="mx-1 btn btn-sm text-light" style="background: #66a182;">Cập
                                             nhật</button>
                                     </td>

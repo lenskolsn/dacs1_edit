@@ -84,6 +84,7 @@ class SanPhamController extends Controller
             'tensanpham' => 'required| max:50',
             'hinhanh' => 'file',
             'mau' => 'required',
+            'soluong' => 'required|numeric| min:1',
             'size' => 'required',
             'gia' => 'required| numeric |max:99999999|min:1',
             'id_danhmuc' => 'required',
@@ -92,7 +93,8 @@ class SanPhamController extends Controller
 
         $fields = [
             'tensanpham' => 'Tên sản phẩm',
-            'hinhanh' => 'Hình ảnh      ',
+            'hinhanh' => 'Hình ảnh',
+            'soluong' => 'Số lượng',
             'mau' => 'Màu',
             'size' => 'Size',
             'gia' => 'Giá',

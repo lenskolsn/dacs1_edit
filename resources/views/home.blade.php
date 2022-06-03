@@ -109,7 +109,7 @@
                                     <img src="/storage/{{ $item->hinhanh }}" alt="{{ $item->tensanpham }}"
                                         class="img-thumbnail">
                                 </a>
-                                @if ($item->trangthai == 0)
+                                @if ($item->trangthai == 0 || $item->soluong == 0)
                                     <h5 class="trangthai">Hết hàng</h5>
                                 @endif
                             </div>
@@ -119,13 +119,11 @@
                             </p>
                             <p>
                                 @if ($item->trangthai == 1)
-                                    <a href="{{ route('cart.them', $item->id) }}"
-                                        class="text-decoration-none btn btn-sm btn-outline-dark">Thêm vào giỏ</a>
                                 @endif
                             </p>
                             <a href="{{ route('xemchitiet', ['id' => $item->id]) }}"
-                                class="text-decoration-none badge text-light"
-                                style="font-size: 13px; background: #66a182;">Xem
+                                class="text-decoration-none badge text-light py-1"
+                                style="font-size: 14px; background: #66a182;">Xem
                                 chi tiết</a>
                         </div>
                     </div>

@@ -74,7 +74,8 @@ class HomeController extends Controller
     }
     public function giohang()
     {
-        return view('giohang');
+        $sanpham = SanPham::all();
+        return view('giohang', compact('sanpham'));
     }
     function blog()
     {

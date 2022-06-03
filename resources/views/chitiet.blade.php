@@ -59,7 +59,6 @@
                         <div class="form-group">
                             <p>Màu</p>
                             <select class="form-select" name="mau">
-                                <option value="">Chọn một tùy chọn</option>
                                 @foreach ($mau_sanpham as $item)
                                     <option value="{{ $item }}">{{ $item }}</option>
                                 @endforeach
@@ -71,7 +70,6 @@
                         <div class="form-group mt-3">
                             <p>Size</p>
                             <select class="form-select" name="size" id="">
-                                <option value="">Chọn một tùy chọn</option>
                                 @foreach ($size_sanpham as $item)
                                     <option value="{{ $item }}">{{ $item }}</option>
                                 @endforeach
@@ -91,7 +89,7 @@
                     </form>
                     <p class="mt-3"><span class="fw-bold">Danh mục:
                         </span><span>{{ $sanpham->danh_mucs->tendanhmuc }}</span></p>
-                    <p><span class="fw-bold">Số lượng tồn kho:</span> {{ $sanpham->soluong }}</p>
+                    <p><span class="fw-bold">Số lượng trong kho:</span> {{ $sanpham->soluong }}</p>
                 </div>
             </div>
             {{-- Comment --}}
