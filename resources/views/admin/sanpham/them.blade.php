@@ -10,24 +10,25 @@
                 <x-select-danh-muc name='id_danhmuc' label='Danh mục' />
                 <x-input name='gia' label='Giá' />
                 {{-- <x-input name='mota' label='Mô tả' /> --}}
-                <x-textarea name="mota" label="Mô tả" />
-                <div class="form-group mt-3">
+                <x-input name="soluong" label="Số lượng" min="0" type="number" />
+                <x-input name="mau" label="Màu" placeholder="VD: Trằng, Đen" type="text" />
+                <x-input name="size" label="Size" placeholder="VD: M,L,XL" type="text" />
+                {{-- <div class="form-group mt-3">
                     <label class="form-label">Trạng thái</label> <br>
                     <input checked type="radio" name="trangthai" value="1"> Còn hàng
                     <input type="radio" name="trangthai" value="0"> Hết hàng
-                </div>
-                <button class="btn text-light" style="background: #66a182;">Thêm dữ liệu</button>
+                </div> --}}
+                <button class="btn text-light mt-3" style="background: #66a182;">Thêm dữ liệu</button>
             </div>
             <div class="col-md-6">
-                <x-input name="soluong" label="Số lượng" type="number"/>
-                <x-input name="mau" label="Màu" type="text" />
-                <x-input name="size" label="Size" type="text" />
+
                 <div class="mt-3">
                     <label class="form-label">Hình ảnh</label>
                     <input name="hinhanh" type="file" id="file_image" class="form-control">
                     <img id="preview_image" class="mt-3"
-                        src="https://routine.vn/media/catalog/product/c/h/cheo_16_5.png" width="250" alt="">
+                        src="https://routine.vn/media/catalog/product/c/h/cheo_16_5.png" width="230" alt="">
                 </div>
+                <x-textarea name="mota" label="Mô tả" />
 
                 {{-- <div class="mt-3">
                     <label class="form-label">Ảnh mô tả</label>

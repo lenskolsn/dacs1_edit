@@ -19,13 +19,15 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td class="d-flex">
-                        <img src="/storage/post/{{ $item->hinhanh }}" width="150" height="150" class="img-thumbnail" alt="">
+                        <img src="/storage/post/{{ $item->hinhanh }}" width="150" height="150" class="img-thumbnail"
+                            alt="">
                         <div class="ms-3">
                             <h6 style="font-size: 15px;">{{ $item->tieude }}</h6>
                             <p style="font-size: 13px;">{{ $item->mota }}</p>
                         </div>
                     </td>
-                    <td class="text-secondary text-center"><i class="fas fa-eye"></i> {{ $item->tongluotxem }}</td>
+                    <td class="text-secondary text-center"><i class="fas fa-eye"></i> {{ $item->tongluotxem }}
+                    </td>
                     <td class="text-center">{{ $item->danhmucbaiviet->tendanhmuc }}</td>
                     <td class="text-center">{{ $item->tacgia->name }}</td>
                     <td class="text-center">{{ $item->created_at->diffForHumans() }}</td>

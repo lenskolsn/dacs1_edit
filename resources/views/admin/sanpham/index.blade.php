@@ -59,7 +59,7 @@
                         <td class="text-center">{{ number_format($sp->gia) }}</td>
                         {{-- <td>{{ $sp->mota }}</td> --}}
                         <th class="text-center">
-                            @if ($sp->trangthai == 1)
+                            @if ($sp->soluong >= 1)
                                 <span class="badge bg-success">Còn hàng</span>
                             @else
                                 <span class="badge bg-danger">Hết hàng</span>
