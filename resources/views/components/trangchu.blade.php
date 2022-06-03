@@ -179,7 +179,7 @@
                             @else
                                 <a href="{{ route('cart.xem') }}" class="text-decoration-none text-light mx-3">
                                     <span class="position-relative">
-                                        <i class="fas fas-shopping-cart fs-4 text-light"></i>
+                                        <i class="fas fa-shopping-cart fs-4 text-light"></i>
                                         <span
                                             class="position-absolute top-1 start-105 translate-middle badge rounded-pill bg-danger">
                                             0
