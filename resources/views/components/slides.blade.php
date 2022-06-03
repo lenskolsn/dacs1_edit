@@ -18,7 +18,7 @@
             <img src="https://media.viezone.vn/prod/2022/4/28/image_ca050753d4.png" class="d-block w-100" height="470"
                 alt="...">
             <div class="carousel-caption d-none d-md-block ">
-                <h5>New Fashion Sale!!!</h5>
+                <h5>Don't wanna wake up</h5>
                 <p>Some representative placeholder content for the first slide.</p>
             </div>
         </div>

@@ -61,14 +61,16 @@ class DonHangController extends Controller
             $id_honhang = $donhang->id;
             // Lấy item trong giỏ hàng
             foreach ($cart->items as $item) {
+                // Lấy số lượng sản phẩm trong giỏ hàng
                 $quantity = $item['quantity'];
+                // Lấy giá sản phẩm
                 $gia = $item['gia'];
                 // Lấy id sản phẩm
                 $id_sanpham = $item['id'];
                 // Tìm sản phẩm theo id
                 $sanpham = SanPham::find($id_sanpham);
-                // Giảm số lượng hàng 
-                $sanpham->soluong -= 1;
+                // Giảm số lượng hàng trong kho
+                $sanpham->soluong -= $quantity;
                 $sanpham->save();
                 ChiTietDonHang::create([
                     'id_donhang' => $id_honhang,

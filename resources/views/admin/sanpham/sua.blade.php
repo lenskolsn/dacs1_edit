@@ -33,7 +33,7 @@
                     <input type="radio" name="trangthai" value="0"> Hết hàng
                 </div>
 
-                <button class="btn btn-success text-light mt-3">Cập nhật dữ liệu</button> <br>
+                <button class="btn text-light mt-3" style="background: #66a182;">Cập nhật dữ liệu</button> <br>
                 <a class="btn btn-dark mt-3" href="{{ route('sanpham.danhsach') }}">
                     <i class="fas fa-arrow-left"></i>
                 </a>

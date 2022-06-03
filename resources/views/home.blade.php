@@ -110,7 +110,7 @@
                                         class="img-thumbnail">
                                 </a>
                                 @if ($item->trangthai == 0 || $item->soluong == 0)
-                                    <h5 class="trangthai">Hết hàng</h5>
+                                    <h5 class="trangthai">Hết hàng!</h5>
                                 @endif
                             </div>
                             <p class="text-decoration-none text-dark mt-3" href="">{{ $item->tensanpham }}</p>

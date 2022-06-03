@@ -29,17 +29,20 @@
         .card {
             position: relative;
             transition: 0.3s;
+            overflow: hidden;
         }
 
         .trangthai {
             padding: 5px 0px;
-            width: 100%;
+            width: 500px;
             color: white;
             background: rgba(255, 0, 0, 0.774);
             position: absolute;
             top: 35%;
             left: 50%;
-            transform: translate(-50%, -50%)
+            box-shadow: 0 0 5px rgb(111, 111, 111);
+            pointer-events: none;
+            transform: translate(-50%,-50%) rotate(45deg);
         }
 
         .card:hover {

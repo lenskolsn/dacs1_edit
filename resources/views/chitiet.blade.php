@@ -83,7 +83,7 @@
                                 vào
                                 giỏ</button>
                         @else
-                            <p class="text-light text-center bg-danger p-1 rounded-1 fs-5 mt-3">Sản phẩm đã hết hàng!
+                            <p class="text-light text-center bg-danger p-1 rounded-1 mt-3">Sản phẩm đã hết hàng!
                             </p>
                         @endif
                     </form>

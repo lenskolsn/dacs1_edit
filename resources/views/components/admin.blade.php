@@ -60,10 +60,9 @@
                 </li>
             </ul>
         </nav>
-        <!-- /.navbar -->
-
+        <!-- /.navbar -->   
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-light elevation-4">
+        <aside class="main-sidebar sidebar-light-warning elevation-4">
             <!-- Brand Logo -->
 
             <!-- Sidebar -->

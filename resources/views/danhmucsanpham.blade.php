@@ -30,8 +30,8 @@
                     @foreach ($sanpham as $item)
                         <div class="col-lg-4 col-md-6">
                             <div class="card text-center mt-3 bg-light">
-                                @if ($item->trangthai == 0)
-                                    <h5 class="trangthai">Hết hàng</h5>
+                                @if ($item->trangthai == 0 || $item->soluong == 0)
+                                    <h5 class="trangthai">Hết hàng!</h5>
                                 @endif
                                 <a href="{{ route('xemchitiet', $item->id) }}">
                                     <img src="/storage/{{ $item->hinhanh }}" class="img-thumbnail"

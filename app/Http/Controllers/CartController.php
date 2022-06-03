@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Helper\CartHelper;
 use App\Models\SanPham;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,6 +22,7 @@ class CartController extends Controller
         $product = SanPham::findOrFail($id);
         $product->mau = $request->mau;
         $product->size = $request->size;
+        dd($cart);
         $cart->add($product);
         return redirect()->back()->with('message', 'Thêm vào giỏ hàng thành công!');
     }

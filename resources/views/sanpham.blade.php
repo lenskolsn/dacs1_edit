@@ -27,31 +27,31 @@
             {{-- Hiển thị sản phẩm theo danh mục --}}
             <div class="row">
                 {{-- @if ($dm->san_phams->count() > 0) --}}
-                    @foreach ($sanpham as $item)
-                        <div class="col-md-4">
-                            <div class="card text-center mt-3 bg-light">
-                                @if ($item->trangthai == 0)
-                                    <h5 class="trangthai">Hết hàng</h5>
-                                @endif
-                                <a href="{{ route('xemchitiet', $item->id) }}">
-                                    <img src="/storage/{{ $item->hinhanh }}" class="img-thumbnail"
-                                        alt="{{ $item->tensanpham }}">
-                                </a>
-                                <p class="text-decoration-none text-dark mt-3" href="">{{ $item->tensanpham }}</p>
-                                <p style="color: #66a182;" class="fw-bold">{{ number_format($item->gia) }}
-                                    <sup>đ</sup>
-                                </p>
-                                <p>
-                                    <a href="{{ route('cart.them', $item->id) }}"
-                                        class="text-decoration-none btn btn-sm btn-outline-dark">Thêm vào giỏ</a>
-                                </p>
-                                <a href="{{ route('xemchitiet', ['id' => $item->id]) }}"
-                                    class="text-decoration-none badge text-light"
-                                    style="font-size: 14px; background: #66a182;">Xem chi
-                                    tiết</a>
-                            </div>
+                @foreach ($sanpham as $item)
+                    <div class="col-md-4">
+                        <div class="card text-center mt-3 bg-light">
+                            @if ($item->trangthai == 0 || $item->soluong == 0)
+                                <h5 class="trangthai">Hết hàng</h5>
+                            @endif
+                            <a href="{{ route('xemchitiet', $item->id) }}">
+                                <img src="/storage/{{ $item->hinhanh }}" class="img-thumbnail"
+                                    alt="{{ $item->tensanpham }}">
+                            </a>
+                            <p class="text-decoration-none text-dark mt-3" href="">{{ $item->tensanpham }}</p>
+                            <p style="color: #66a182;" class="fw-bold">{{ number_format($item->gia) }}
+                                <sup>đ</sup>
+                            </p>
+                            <p>
+                                <a href="{{ route('cart.them', $item->id) }}"
+                                    class="text-decoration-none btn btn-sm btn-outline-dark">Thêm vào giỏ</a>
+                            </p>
+                            <a href="{{ route('xemchitiet', ['id' => $item->id]) }}"
+                                class="text-decoration-none badge text-light"
+                                style="font-size: 14px; background: #66a182;">Xem chi
+                                tiết</a>
                         </div>
-                    @endforeach
+                    </div>
+                @endforeach
                 {{-- @else
                     <p class="text-danger text-center fs-5">Chưa có sản phẩm!!!</p>
                 @endif --}}
