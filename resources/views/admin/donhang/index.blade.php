@@ -8,7 +8,7 @@
                 <thead class="text-light text-center" style="background: #66a182;">
                     <tr>
                         <th>#</th>
-                        <th>Thông tin</th>
+                        <th>Thông tin khách hàng</th>
                         <th>Ghi chú</th>
                         <th>Tổng tiền</th>
                         <th>Ngày đặt</th>
@@ -21,9 +21,17 @@
                         <tr>
                             <td class="text-center">{{ $item->id }}</td>
                             <td>
-                                <p><span class="text-primary fw-bold">{{ $item->tenkhachhang }}</span> -
-                                    {{ $item->diachi }}</p>
-                                <p>SĐT: {{ $item->khach_hangs->phone }}</p>
+                                <ul>
+                                    <li class="text-secondary">Họ tên:
+                                        {{ $item->tenkhachhang }}
+                                    </li>
+                                    <li class="text-secondary">Địa chỉ: 
+                                        {{ $item->diachi }}
+                                    </li>
+                                    <li class="text-secondary">Số điện thoại:
+                                        {{ $item->khach_hangs->phone }}
+                                    </li>
+                                </ul>
                             </td>
                             <td class="text-center">{{ $item->ghichu }}</td>
                             <td class="fw-bold text-danger text-center">{{ number_format($item->tongtien) }} VNĐ</td>

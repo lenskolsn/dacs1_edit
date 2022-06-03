@@ -25,10 +25,7 @@
         <table class="table shadow-sm">
             <thead class="text-light text-center" style="background: #66a182;">
                 <th>#</th>
-                <th class="w-25">Tên sản phẩm</th>
-                <th>Số lượng</th>
-                <th>Màu</th>
-                <th>Size</th>
+                <th>Thông tin sản phẩm</th>
                 <th>Danh mục</th>
                 <th>Giá</th>
                 {{-- <th>Mô tả</th> --}}
@@ -42,12 +39,22 @@
                         <td class="d-flex">
                             <img class="img-thumbnail" src="/storage/{{ $sp->hinhanh }}" width="100" alt="">
                             <div class="ms-3">
-                                {{ $sp->tensanpham }}
+                                <ul>
+                                    <li>
+                                        {{ $sp->tensanpham }}
+                                    </li>
+                                    <li>Số lượng:
+                                        {{ $sp->soluong }}
+                                    </li>
+                                    <li>Màu:
+                                        {{ $sp->mau }}
+                                    </li>
+                                    <li>Size:
+                                        {{ $sp->size }}
+                                    </li>
+                                </ul>
                             </div>
                         </td>
-                        <td class="text-center">{{ $sp->soluong }}</td>
-                        <td class="text-center">{{ $sp->mau }}</td>
-                        <td class="text-center">{{ $sp->size }}</td>
                         <td class="text-center">{{ $sp->danh_mucs->tendanhmuc ?? '' }}</td>
                         <td class="text-center">{{ number_format($sp->gia) }}</td>
                         {{-- <td>{{ $sp->mota }}</td> --}}
