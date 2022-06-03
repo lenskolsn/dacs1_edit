@@ -57,33 +57,41 @@
                     <form method="post" action="{{ route('cart.them', ['id' => $sanpham->id]) }}">
                         @csrf
                         <div class="form-group">
-                            <p>Màu</p>
-                            <select class="form-select" name="mau">
-                                @foreach ($mau_sanpham as $item)
-                                    <option value="{{ $item }}">{{ $item }}</option>
-                                @endforeach
-                            </select>
-                            @error('mau')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
+                            <p class="fw-bold">Màu:</p>
+                            @if ($sanpham->mau != '')
+                                <select class="form-select" name="mau">
+                                    @foreach ($mau_sanpham as $item)
+                                        <option value="{{ $item }}">{{ $item }}</option>
+                                    @endforeach
+                                </select>
+                                @error('mau')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            @else
+                                <p class="text-secondary">Đang cập nhật...</p>
+                            @endif
                         </div>
                         <div class="form-group mt-3">
-                            <p>Size</p>
-                            <select class="form-select" name="size" id="">
-                                @foreach ($size_sanpham as $item)
-                                    <option value="{{ $item }}">{{ $item }}</option>
-                                @endforeach
-                            </select>
-                            @error('size')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
+                            <p class="fw-bold">Size:</p>
+                            @if ($sanpham->size != '')
+                                <select class="form-select" name="size" id="">
+                                    @foreach ($size_sanpham as $item)
+                                        <option value="{{ $item }}">{{ $item }}</option>
+                                    @endforeach
+                                </select>
+                                @error('size')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            @else
+                                <p class="text-secondary">Đang cập nhật...</p>
+                            @endif
                         </div>
                         @if ($sanpham->soluong > 0 || $sanpham->trangthai == 0)
                             <button class="btn text-light mt-3 w-100" style="background: #66a182;">Thêm
                                 vào
                                 giỏ</button>
                         @else
-                            <p class="text-light text-center bg-danger p-1 rounded-1 mt-3">Sản phẩm đã hết hàng!
+                            <p class="text-light text-center bg-danger p-1 rounded-1 fs-5 mt-3">Sản phẩm đã hết hàng!
                             </p>
                         @endif
                     </form>
