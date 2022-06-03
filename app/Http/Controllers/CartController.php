@@ -22,7 +22,6 @@ class CartController extends Controller
         $product = SanPham::findOrFail($id);
         $product->mau = $request->mau;
         $product->size = $request->size;
-        dd($cart);
         $cart->add($product);
         return redirect()->back()->with('message', 'Thêm vào giỏ hàng thành công!');
     }
