@@ -50,9 +50,14 @@ class HomeController extends Controller
     {
         // Chi tiết sản phẩm theo id
         $sanpham = SanPham::findOrFail($id);
+        $mau = $sanpham->mau;
+        $mau_sanpham = explode(',', $mau);
+        $size = $sanpham->size;
+        $size_sanpham = explode(',', $size);
+        // dd($size_sanpham);
         $comment = Comment::orderByDesc('id')->where('sanpham_id', $id)->get();
         $khachhang = KhachHang::all();
-        return view('chitiet', compact('sanpham', 'comment', 'khachhang'));
+        return view('chitiet', compact('sanpham', 'comment', 'khachhang', 'mau_sanpham', 'size_sanpham'));
     }
     public function danhmucsanpham($id = null)
     {

@@ -55,16 +55,27 @@ class DonHangController extends Controller
             'diachi' => $request->diachi,
             'tongtien' => $cart->total_price,
         ]);
-
+        // Kiểm tra nếu có đơn hàng
         if ($donhang) {
+            //Lấy id đơn hàng
             $id_honhang = $donhang->id;
+            // Lấy item trong giỏ hàng
             foreach ($cart->items as $item) {
                 $quantity = $item['quantity'];
                 $gia = $item['gia'];
+                // Lấy id sản phẩm
+                $id_sanpham = $item['id'];
+                // Tìm sản phẩm theo id
+                $sanpham = SanPham::find($id_sanpham);
+                // Giảm số lượng hàng 
+                $sanpham->soluong -= 1;
+                $sanpham->save();
                 ChiTietDonHang::create([
                     'id_donhang' => $id_honhang,
                     'id_sanpham' => $item['id'],
                     'gia' => $gia,
+                    'mau' => $item['mau'],
+                    'size' => $item['size'],
                     'quantity' => $quantity
                 ]);
             }
@@ -79,5 +90,18 @@ class DonHangController extends Controller
         ChiTietDonHang::where('id_donhang', $id)->delete();
         DonHang::destroy($id);
         return back()->with('message', 'Xóa đơn hàng thành công!');
+    }
+    function sua($id = null)
+    {
+        $donhang = DonHang::find($id);
+        return view('admin.donhang.sua', compact('donhang'));
+    }
+    function luu(Request $request, $id = null)
+    {
+        $data = $request->all();
+        unset($data['_token']);
+        $donhang = DonHang::updateOrCreate(['id' => $id], $data);
+        $donhang->save();
+        return redirect()->route('donhang.danhsach')->with('message', 'Sửa đơn hàng thành công!');
     }
 }

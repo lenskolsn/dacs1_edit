@@ -13,6 +13,11 @@ class SanPhamController extends Controller
     public function index()
     {
         $result = SanPham::orderbydesc('id')->search()->paginate(4);
+        // foreach($result as $sp){
+        //     if($sp->soluong == 0){
+        //         $sp->trangthai == 1;    
+        //     }
+        // }   
         return view('admin.sanpham.index')->with('sanpham', $result);
     }
     public function them()
@@ -60,7 +65,7 @@ class SanPhamController extends Controller
         if ($sanpham['chitietdonhang'] != null) {
             return back()->with('error', 'Không thể xóa sản phẩm có trong đơn hàng!');
         } else {
-            foreach($sanpham->comment as $cm){
+            foreach ($sanpham->comment as $cm) {
                 $cm->delete();
             }
             SanPham::destroy($id);
@@ -78,6 +83,8 @@ class SanPhamController extends Controller
         $rules = [
             'tensanpham' => 'required| max:50',
             'hinhanh' => 'file',
+            'mau' => 'required',
+            'size' => 'required',
             'gia' => 'required| numeric |max:99999999|min:1',
             'id_danhmuc' => 'required',
             // 'mota' => 'required|max:255',
@@ -86,6 +93,8 @@ class SanPhamController extends Controller
         $fields = [
             'tensanpham' => 'Tên sản phẩm',
             'hinhanh' => 'Hình ảnh      ',
+            'mau' => 'Màu',
+            'size' => 'Size',
             'gia' => 'Giá',
             'id_danhmuc' => 'Danh mục',
             // 'mota' => 'Mô tả',

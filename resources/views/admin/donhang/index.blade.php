@@ -30,7 +30,8 @@
                             <td>
                                 <a href="{{ route('donhang.chitiet', $item->id) }}" class="btn btn-info text-light"><i
                                         class="fas fa-eye"></i></a>
-                                <a href="" class="btn btn-warning text-light"><i class="fas fa-pen"></i></a>
+                                <a href="{{ route('donhang.sua', $item->id) }}" class="btn btn-warning text-light"><i
+                                        class="fas fa-pen"></i></a>
                                 <a href="{{ route('donhang.xoa', $item->id) }}" class="btn btn-danger text-light"><i
                                         class="fas fa-trash"></i></a>
                             </td>

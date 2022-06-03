@@ -1,5 +1,11 @@
 <x-trangchu title="Giỏ hàng">
     <div class="row">
+        @if(Session::has('error'))
+            <p class="alert bg-danger text-light">{{ Session::get('error') }}</p>
+        @endif
+        @if(Session::has('success'))
+            <p class="alert bg-success text-light">{{ Session::get('success') }}</p>
+        @endif
         <h5 class="">GIỎ HÀNG</h5>
         <div class="col-md rounded shadow-sm bg-light p-2">
             @if ($cart->total_quantity == 0)
@@ -12,6 +18,8 @@
                             <th>#</th>
                             <th>Tên sản phẩm</th>
                             <th>Hình ảnh</th>
+                            <th>Màu</th>
+                            <th>Size</th>
                             <th>Giá</th>
                             <th style="width: 250px;">Số lượng</th>
                             <th>Xóa</th>
@@ -25,6 +33,8 @@
                                 <td>
                                     <img src="/storage/{{ $item['hinhanh'] }}" width="100" alt="">
                                 </td>
+                                <td>{{ $item['mau'] }}</td>
+                                <td>{{ $item['size'] }}</td>
                                 <td class="text-danger"><b>{{ number_format($item['gia']) }}</b></td>
                                 <form action="{{ route('cart.capnhat', $item['id']) }}" method="get">
                                     <td class="d-flex justify-content-center" style="width: 250px;">

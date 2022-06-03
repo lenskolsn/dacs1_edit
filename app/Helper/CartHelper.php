@@ -21,6 +21,8 @@ class CartHelper
       'tensanpham' => $product->tensanpham,
       'hinhanh' => $product->hinhanh,
       'gia' => $product->gia,
+      'mau' => $product->mau,
+      'size' => $product->size,
       'quantity' => $quantity,
     ];
     if (isset($this->items[$product->id])) {

@@ -92,7 +92,7 @@ Route::prefix('taikhoan')->group(function () {
 // Group giỏ hàng
 Route::prefix('giohang')->middleware('kh')->group(function () {
     Route::get('/', [HomeController::class, 'giohang'])->name('cart.xem');
-    Route::get('/them/{id}/{quantity?}', [CartController::class, 'them'])->name('cart.them');
+    Route::post('/them/{id}/{quantity?}', [CartController::class, 'them'])->name('cart.them');
     Route::get('/xoa/{id}', [CartController::class, 'xoa'])->name('cart.xoa');
     Route::get('/capnhat/{id}', [CartController::class, 'capnhat'])->name('cart.capnhat');
     Route::get('/clear', [CartController::class, 'clear'])->name('cart.clear');

@@ -22,6 +22,9 @@
         </div>
         {{-- Chi tiết sản phẩm --}}
         <div class="col-lg-9 col-md-7">
+            @if (Session::has('message'))
+                <p class="alert bg-success text-light">{{ Session::get('message') }}</p>
+            @endif
             <h5 class="text-center badge w-100" style="background: #66a182;">Chi tiết sản phẩm</h5>
             <div class="row py-2 d-flex justify-content-between">
                 <div class="col-md-5">
@@ -43,7 +46,7 @@
                 <div class="col-md-6">
                     <h3 name='tensanpham' class="tensanpham">{{ $sanpham->tensanpham }}</h3>
                     <p class="gia h4 text-danger">{{ number_format($sanpham->gia) }} <sup>đ</sup></p>
-                    <p>Mô tả:
+                    <p><span class="fw-bold">Mô tả:</span>
                         @if ($sanpham->mota != '')
                             {{ $sanpham->mota }}
                         @else
@@ -51,41 +54,44 @@
                         @endif
                     </p>
                     <hr>
-                    <form method="" action="">
+                    <form method="post" action="{{ route('cart.them', ['id' => $sanpham->id]) }}">
                         @csrf
-                        {{-- <div class="form-group">
-                            <p>Màu</p>
-                            <select class="form-select" name="mau" id="">
-                                <option value="">Chọn một tùy chọn</option>
-                                <option value="1">Trắng</option>
-                                <option value="2">Đen</option>
-                            </select>
-                        </div>
                         <div class="form-group">
+                            <p>Màu</p>
+                            <select class="form-select" name="mau">
+                                <option value="">Chọn một tùy chọn</option>
+                                @foreach ($mau_sanpham as $item)
+                                    <option value="{{ $item }}">{{ $item }}</option>
+                                @endforeach
+                            </select>
+                            @error('mau')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="form-group mt-3">
                             <p>Size</p>
                             <select class="form-select" name="size" id="">
                                 <option value="">Chọn một tùy chọn</option>
-                                <option value="1">M</option>
-                                <option value="2">L</option>
-                                <option value="3">XL</option>
+                                @foreach ($size_sanpham as $item)
+                                    <option value="{{ $item }}">{{ $item }}</option>
+                                @endforeach
                             </select>
-                        </div> --}}
-                        {{-- <div class="form-group mt-3">
-                            <label for="soluong" class="form-label">Số lượng:</label>
-                            <input name="soluong" id="soluong" type="number" min="1" max="100" value="1">
-                        </div> --}}
-                        @if ($sanpham->trangthai == 1)
-                            <a href="{{ route('cart.them', ['id' => $sanpham->id]) }}"
-                                class="btn text-light mt-3 w-100" style="background: #66a182;">Thêm
+                            @error('size')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        @if ($sanpham->soluong > 0 || $sanpham->trangthai == 0)
+                            <button class="btn text-light mt-3 w-100" style="background: #66a182;">Thêm
                                 vào
-                                giỏ</a>
+                                giỏ</button>
                         @else
-                            <p class="text-light text-center bg-danger p-1 rounded-1 fs-5">Sản phẩm đã hết hàng!</p>
+                            <p class="text-light text-center bg-danger p-1 rounded-1 fs-5 mt-3">Sản phẩm đã hết hàng!
+                            </p>
                         @endif
-                        {{-- <a href="{{ route('dathang') }}" class="btn btn-success mt-3">Mua ngay</a> --}}
                     </form>
                     <p class="mt-3"><span class="fw-bold">Danh mục:
                         </span><span>{{ $sanpham->danh_mucs->tendanhmuc }}</span></p>
+                    <p><span class="fw-bold">Số lượng tồn kho:</span> {{ $sanpham->soluong }}</p>
                 </div>
             </div>
             {{-- Comment --}}
@@ -114,7 +120,7 @@
                                         <div class="ms-3">
                                             <h6 class="text-primary fw-bold m-0">{{ $kh->name }}</h6>
                                             <span class="text-secondary"
-                                                style="font-size: 15px;">{{ $cm->created_at->format('d/m/Y H:i:s') }}</span>
+                                                style="font-size: 15px;">{{ $cm->created_at->diffForHumans() }}</span>
                                             <p>{{ $cm->noidung }}</p>
                                         </div>
                                     </div>

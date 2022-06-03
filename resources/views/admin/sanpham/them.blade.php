@@ -19,6 +19,9 @@
                 <button class="btn text-light" style="background: #66a182;">Thêm dữ liệu</button>
             </div>
             <div class="col-md-6">
+                <x-input name="soluong" label="Số lượng" type="number"/>
+                <x-input name="mau" label="Màu" type="text" />
+                <x-input name="size" label="Size" type="text" />
                 <div class="mt-3">
                     <label class="form-label">Hình ảnh</label>
                     <input name="hinhanh" type="file" id="file_image" class="form-control">

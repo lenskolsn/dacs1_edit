@@ -2,7 +2,7 @@
     <form action="{{ route('sanpham.luu', $sanpham->id) }}" method="post" enctype="multipart/form-data">
         <div class="row">
             @if (Session::has('message'))
-                <p class="alert bg-success text-light">{{Session::get('message')}}</p>
+                <p class="alert bg-success text-light">{{ Session::get('message') }}</p>
             @endif
             <div class="col-md-6">
                 @csrf
@@ -33,10 +33,15 @@
                     <input type="radio" name="trangthai" value="0"> Hết hàng
                 </div>
 
-                <button class="btn btn-success text-light mt-3">Cập nhật dữ liệu</button>
-
+                <button class="btn btn-success text-light mt-3">Cập nhật dữ liệu</button> <br>
+                <a class="btn btn-dark mt-3" href="{{ route('sanpham.danhsach') }}">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
             </div>
             <div class="col-md-6">
+                <x-input name="soluong" label="Số lượng" value="{{ $sanpham->soluong }}" type="number" />
+                <x-input name="mau" label="Màu" value="{{ $sanpham->mau }}" type="text" />
+                <x-input name="size" label="Size" value="{{ $sanpham->size }}" type="text" />
                 <div class="mt-3">
                     <label for="" class="form-label">Hình ảnh</label>
                     <input name="hinhanh" type="file" id="file_image" class="form-control">
@@ -57,7 +62,4 @@
             </div>
         </div>
     </form>
-    <a class="btn btn-dark mt-3" href="{{ route('sanpham.danhsach') }}">
-        <i class="fas fa-arrow-left"></i>
-    </a>
 </x-admin>

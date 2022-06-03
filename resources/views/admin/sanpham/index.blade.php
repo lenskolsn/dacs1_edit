@@ -7,7 +7,7 @@
     @elseif(Session::has('error'))
         <p class="alert bg-danger text-light">{{ Session::get('error') }}</p>
     @endif
-    
+
     <div class="row">
         <div class="col-md-6">
             <form class="d-flex" method="get">
@@ -25,11 +25,13 @@
         <table class="table shadow-sm">
             <thead class="text-light text-center" style="background: #66a182;">
                 <th>#</th>
-                <th>Tên sản phẩm</th>
-                <th>Hình ảnh</th>
+                <th class="w-25">Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Màu</th>
+                <th>Size</th>
                 <th>Danh mục</th>
                 <th>Giá</th>
-                <th>Mô tả</th>
+                {{-- <th>Mô tả</th> --}}
                 <th>Trạng thái</th>
                 <th>Actions</th>
             </thead>
@@ -37,14 +39,18 @@
                 @foreach ($sanpham as $sp)
                     <tr>
                         <td>{{ $sp->id }}</td>
-                        <td class="w-25">{{ $sp->tensanpham }}</td>
-                        <td style="width: 100px;">
-                            <img class="img-thumbnail" src="/storage/{{ $sp->hinhanh }}" width="100" 
-                                alt="">
+                        <td class="d-flex">
+                            <img class="img-thumbnail" src="/storage/{{ $sp->hinhanh }}" width="100" alt="">
+                            <div class="ms-3">
+                                {{ $sp->tensanpham }}
+                            </div>
                         </td>
+                        <td class="text-center">{{ $sp->soluong }}</td>
+                        <td class="text-center">{{ $sp->mau }}</td>
+                        <td class="text-center">{{ $sp->size }}</td>
                         <td class="text-center">{{ $sp->danh_mucs->tendanhmuc ?? '' }}</td>
                         <td class="text-center">{{ number_format($sp->gia) }}</td>
-                        <td class="w-25">{{ $sp->mota }}</td>
+                        {{-- <td>{{ $sp->mota }}</td> --}}
                         <th class="text-center">
                             @if ($sp->trangthai == 1)
                                 <span class="badge bg-success">Còn hàng</span>
