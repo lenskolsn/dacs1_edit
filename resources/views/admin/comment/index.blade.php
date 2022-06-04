@@ -8,6 +8,7 @@
                 <th>#</th>
                 <th>Khách hàng</th>
                 <th class="text-center">Sản phẩm</th>
+                <th class="text-center">Tải lên</th>
                 <th class="text-center">Actions</th>
             </tr>
         </thead>
@@ -27,6 +28,7 @@
                             class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             title="Click để xem sản phẩm">{{ $cm->sanpham->tensanpham }}</a>
                     </td>
+                    <td class="text-center">{{ $cm->created_at->diffForHumans() }}</td>
                     <td class="text-center">
                         <a href="{{ route('comment.sua', $cm->id) }}" class="btn btn-warning text-light"><i
                                 class="fas fa-edit"></i></a>
