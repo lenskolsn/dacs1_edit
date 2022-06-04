@@ -28,7 +28,7 @@
                     @foreach ($sanpham as $item)
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
                             <div class="card text-center bg-light m-auto">
-                                @if ($item->trangthai == 0)
+                                @if ($item->trangthai == 0 || $item->soluong == 0)
                                     <h5 class="trangthai">Hết hàng</h5>
                                 @endif
                                 <img src="/storage/{{ $item->hinhanh }}" class="img-thumbnail"
