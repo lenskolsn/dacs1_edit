@@ -120,7 +120,7 @@ class KhachHangController extends Controller
         $rules = [
             'name' => 'required',
             'email' => 'required|unique:khach_hangs|email',
-            'phone' => 'required|numeric|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:10',
+            'phone' => 'required|numeric|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:10|unique:khach_hangs',
             'password' => 'required| min:5',
             'confirm_password' => 'required| same:password'
         ];
@@ -187,7 +187,6 @@ class KhachHangController extends Controller
     function post_doimatkhau(Request $request)
     {
         $data = $request->all();
-
 
         $validator = Validator::make($data, [
             'old_password' => 'required',
